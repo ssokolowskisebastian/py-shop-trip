@@ -1,6 +1,3 @@
-from math import dist
-
-
 class Car:
     def __init__(self, brand: str, fuel_consumption: float) -> None:
         self.brand = brand

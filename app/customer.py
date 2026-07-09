@@ -18,7 +18,6 @@ class Customer:
         self.car = car
         self.home = location.copy()
 
-
     def trip_cost(self, shop, fuel_price: float) -> float:
         distance = calculate_distance(self.location, shop.location)
         fuel = self.car.fuel_cost(distance, fuel_price)
