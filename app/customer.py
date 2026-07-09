@@ -1,3 +1,4 @@
+from app.shop import Shop
 from app.utils import calculate_distance
 from app.car import Car
 
@@ -18,12 +19,12 @@ class Customer:
         self.car = car
         self.home = location.copy()
 
-    def trip_cost(self, shop, fuel_price: float) -> float:
+    def trip_cost(self, shop: Shop, fuel_price: float) -> float:
         distance = calculate_distance(self.location, shop.location)
         fuel = self.car.fuel_cost(distance, fuel_price)
         return 2 * fuel + shop.products_cost(self.product_cart)
 
-    def ride_to(self, shop) -> None:
+    def ride_to(self, shop: Shop) -> None:
         print(f"{self.name} rides to {shop.name}")
         self.location = shop.location.copy()
 

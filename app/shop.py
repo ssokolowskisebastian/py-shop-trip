@@ -8,7 +8,10 @@ class Shop:
         self.products = products
 
     def products_cost(self, cart: dict) -> float:
-        return sum(self.products[product] * amount for product, amount in cart.items())
+        return sum(
+            self.products[product] * amount
+            for product, amount in cart.items()
+        )
 
     def print_receipt(self, customer_name: str, cart: dict) -> None:
         print()

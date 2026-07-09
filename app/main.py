@@ -5,9 +5,9 @@ from app.customer import Customer
 from app.shop import Shop
 
 
-def shop_trip():
+def shop_trip() -> None:
     with open(
-        "/Users/sebastian/PyCharmMiscProject/035py-shop-trip/app/config.json"
+        "../app/config.json"
     ) as file:
         data = json.load(file)
 
@@ -25,7 +25,10 @@ def shop_trip():
     customers = []
 
     for customer in data["customers"]:
-        car = Car(customer["car"]["brand"], customer["car"]["fuel_consumption"])
+        car = Car(
+            customer["car"]["brand"],
+            customer["car"]["fuel_consumption"]
+        )
 
         customers.append(
             Customer(
@@ -46,7 +49,8 @@ def shop_trip():
         for shop in shops:
             cost = customer.trip_cost(shop, fuel_price)
 
-            print(f"{customer.name}'s trip to the " f"{shop.name} costs {cost:.2f}")
+            print(f"{customer.name}'s trip to the " 
+                  f"{shop.name} costs {cost:.2f}")
 
             if cheapest_cost is None or cost < cheapest_cost:
                 cheapest_cost = cost
