@@ -49,7 +49,7 @@ def shop_trip() -> None:
         for shop in shops:
             cost = customer.trip_cost(shop, fuel_price)
 
-            print(f"{customer.name}'s trip to the " 
+            print(f"{customer.name}'s trip to the "
                   f"{shop.name} costs {cost:.2f}")
 
             if cheapest_cost is None or cost < cheapest_cost:
