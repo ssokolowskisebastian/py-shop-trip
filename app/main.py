@@ -6,7 +6,7 @@ from app.shop import Shop
 
 
 def shop_trip() -> None:
-    with open("../035py-shop-trip/app/config.json") as file:
+    with open("../py-shop-trip/app/config.json") as file:
         data = json.load(file)
 
     fuel_price = data["FUEL_PRICE"]
