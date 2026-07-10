@@ -26,7 +26,7 @@ class Customer:
 
     def ride_to(self, shop: Shop) -> None:
         print(f"{self.name} rides to {shop.name}")
-        self.location = shop.location.copy()
+        self.location = list(shop.location)
 
     def ride_home(self) -> None:
         print(f"{self.name} rides home")

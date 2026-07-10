@@ -3,10 +3,12 @@ import json
 from app.car import Car
 from app.customer import Customer
 from app.shop import Shop
+import os
 
 
 def shop_trip() -> None:
-    with open("../py-shop-trip/app/config.json") as file:
+    config_path = os.path.join(os.path.dirname(__file__), "config.json")
+    with open(config_path) as file:
         data = json.load(file)
 
     fuel_price = data["FUEL_PRICE"]
